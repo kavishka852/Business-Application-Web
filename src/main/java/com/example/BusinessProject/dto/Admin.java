@@ -9,7 +9,6 @@ public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String adminusername;
     private String adminpassword;
 
