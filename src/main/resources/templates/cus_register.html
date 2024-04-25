@@ -61,7 +61,7 @@
 <body>
     <div class="container">
         <h2>Client Registration</h2>
-        <form th:action="@{/clients/register}" th:object="${client}" method="post">
+        <form action="/clients/register" method="post" th:object="${client}">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" th:field="*{name}" required>

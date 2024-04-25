@@ -23,9 +23,15 @@ public class CustomerUserController {
         return customerUserService.getAllClients();
     }
 
-    @PostMapping("/register")
-    public Clients addClient(@RequestBody Clients client) {
+    @GetMapping("/register")
+    public String showRegistrationForm(Model model) {
+        model.addAttribute("client", new Clients());
+        return "cus_register";
+    }
 
-        return customerUserService.saveClient(client);
+    @PostMapping("/register")
+    public String processRegistrationForm(@ModelAttribute("client") Clients client) {
+        customerUserService.saveClient(client);
+        return "redirect:/"; // Redirect to the index page after registration
     }
 }
