@@ -33,8 +33,21 @@ public class Clients {
     @Column(name = "regdate")
     private Date regdate;
 
+    public Clients() {
+    }
+
     public Clients(int id, String customerid, String name, String username, int password, String workplacename, String workplaceaddress, Date regdate) {
         this.id = id;
+        this.customerid = customerid;
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.workplacename = workplacename;
+        this.workplaceaddress = workplaceaddress;
+        this.regdate = regdate;
+    }
+
+    public Clients(String customerid, String name, String username, int password, String workplacename, String workplaceaddress, Date regdate) {
         this.customerid = customerid;
         this.name = name;
         this.username = username;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,26 +61,26 @@
 <body>
     <div class="container">
         <h2>Client Registration</h2>
-        <form action="submit_registration.php" method="POST">
+        <form th:action="@{/clients/register}" th:object="${client}" method="post">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" th:field="*{name}" required>
             </div>
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" th:field="*{username}" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" th:field="*{password}" required>
             </div>
             <div class="form-group">
                 <label for="workplacename">Workplace Name:</label>
-                <input type="text" id="workplacename" name="workplacename" required>
+                <input type="text" id="workplacename" name="workplacename" th:field="*{workplacename}" required>
             </div>
             <div class="form-group">
                 <label for="workplaceaddress">Workplace Address:</label>
-                <input type="text" id="workplaceaddress" name="workplaceaddress" required>
+                <input type="text" id="workplaceaddress" name="workplaceaddress" th:field="*{workplaceaddress}" required>
             </div>
             <button type="submit">Register</button>
         </form>
